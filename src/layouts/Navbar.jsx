@@ -5,7 +5,7 @@ import { FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
     return (
-        <nav className="bg-black text-white px-6 py-4 flex justify-between items-center">
+        <nav className="px-6 py-4 flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center">
                 <img src="/codesefod-logo.png" alt="CodeSeFod Logo" className="h-6 mr-2" />
@@ -13,7 +13,7 @@ const Navbar = () => {
             </div>
 
             {/* Menu Items */}
-            <ul className="hidden md:flex space-x-6">
+            <ul className="hidden md:flex gap-4">
                 <li className="hover:text-gray-400 flex items-center">
                     <Link to="/services">Services</Link> <FaChevronDown className="ml-1 text-xs" />
                 </li>
@@ -23,8 +23,8 @@ const Navbar = () => {
                 <li className="hover:text-gray-400"><Link to="/careers">Careers</Link></li>
             </ul>
 
-            <div className="flex items-center space-x-4">
-                <button className="border border-white px-4 py-1 rounded-lg hover:bg-white hover:text-black transition">
+            <div className="flex items-center gap-4">
+                <button className="px-4 py-1 rounded-lg hover:bg-white hover:text-black transition">
                     Contact
                 </button>
             </div>
