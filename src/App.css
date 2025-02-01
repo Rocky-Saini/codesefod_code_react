@@ -1,14 +1,53 @@
-/* General Styles */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "tailwindcss";
 
 body {
+    @apply bg-black text-gray-100;
+    font-family: "Nunito", serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", sans-serif;
+}
 
-  background: #242424;
-  color: #fff;
-  min-height: 100vh;
- 
+header {
+    @apply sticky top-0 left-0 w-full z-50;
+}
+
+header .left,
+header .right {
+    width: 250px;
+}
+.btn {
+    @apply px-4 py-1 w-max cursor-pointer h-max hover:scale-105 active:scale-95;
+    transition: all 300ms ease-in-out;
+}
+
+.btn.btn-filled {
+    background-color: white;
+    color: black;
+    border: 1px solid #fff;
+}
+.btn.btn-outline {
+    @apply px-4 py-1 h-max;
+    border: 1px solid #fff;
+    transition: all 300ms ease-in-out;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+.nav-link {
+    @apply text-white opacity-70;
+    transition: all 300ms ease-in-out;
+    &:hover,
+    &.active {
+        @apply opacity-100;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
 }
