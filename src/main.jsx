@@ -4,11 +4,13 @@ import "./index.css";
 
 import { BrowserRouter } from "react-router";
 import { AppRoutes } from "./routes";
+import App from "./App.jsx";
+import CSFProvider from "./components/context/CSFContext";
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        <BrowserRouter>
-            <AppRoutes />
-        </BrowserRouter>
+        <CSFProvider>
+            <App />
+        </CSFProvider>
     </StrictMode>
 );

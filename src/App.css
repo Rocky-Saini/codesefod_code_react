@@ -4,7 +4,24 @@
 body {
     @apply bg-black text-gray-100;
     font-family: "Nunito", serif;
+    &:has(header.active) {
+        overflow: hidden;
+    }
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 1);
+        outline: 2px solid rgba(0, 0, 0, 1);
+        border-radius: 3px;
+    }
 }
+
 h1,
 h2,
 h3,
@@ -12,6 +29,9 @@ h4,
 h5,
 h6 {
     font-family: "Lato", sans-serif;
+}
+.section-title {
+    @apply text-4xl font-bold mb-8 text-gray-900;
 }
 
 header {
@@ -49,5 +69,38 @@ header .right {
         @apply opacity-100;
         text-decoration: underline;
         text-underline-offset: 6px;
+    }
+}
+
+.hamburger {
+    @apply sm:hidden w-6 aspect-[7/5.5] flex flex-col justify-between;
+    .line {
+        @apply block bg-white [&:nth-child(2)]:w-4/5 [&:nth-child(2)]:ml-auto rounded-xl transition-all duration-200 origin-right;
+        height: 2px;
+    }
+}
+
+.dropdown {
+    @apply fixed sm:hidden w-full -top-[100vh] transition-all duration-300 py-20 backdrop-blur-2xl;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+header.active {
+    .hamburger {
+        .line {
+            &:first-child {
+                transform: rotate(-45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:last-child {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .dropdown {
+        @apply top-0;
     }
 }
