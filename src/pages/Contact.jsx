@@ -26,6 +26,19 @@ const Contact = () => {
                             />
                         </div>
                         <div>
+                            <label htmlFor="mobile" className="block text-sm font-medium text-gray-300">
+                                Mobile Number
+                            </label>
+                            <input
+                                id="mobile"
+                                name="mobile"
+                                type="tel"
+                                required
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                placeholder="Your Mobile Number"
+                            />
+                        </div>
+                        <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                                 Email
                             </label>
@@ -37,6 +50,68 @@ const Contact = () => {
                                 className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                                 placeholder="Your Email"
                             />
+                        </div>
+                        <div>
+                            <label htmlFor="service" className="block text-sm font-medium text-gray-300">
+                                Service
+                            </label>
+                            <select
+                                id="service"
+                                name="service"
+                                required
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                            >
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="mobile-app-development">Mobile App Development</option>
+                                <option value="ui-ux-design">UI/UX Design</option>
+                                <option value="software-consulting">Software Consulting</option>
+                                <option value="cloud-services">Cloud Services</option>
+                                <option value="devops">DevOps</option>
+                                <option value="ai-ml-solutions">AI/ML Solutions</option>
+                                <option value="data-analytics">Data Analytics</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="blockchain-development">Blockchain Development</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="technologies" className="block text-sm font-medium text-gray-300">
+                                Technologies
+                            </label>
+                            <select
+                                id="technologies"
+                                name="technologies"
+                                multiple
+                                required
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                            >
+                                <option value="java">Java</option>
+                                <option value="spring-boot">Spring Boot</option>
+                                <option value="mysql">MySQL</option>
+                                <option value="mongodb">MongoDB</option>
+                                <option value="react">React</option>
+                                <option value="nodejs">Node.js</option>
+                                <option value="python">Python</option>
+                                <option value="django">Django</option>
+                                <option value="angular">Angular</option>
+                                <option value="vuejs">Vue.js</option>
+                                <option value="docker">Docker</option>
+                                <option value="kubernetes">Kubernetes</option>
+                                <option value="aws">AWS</option>
+                                <option value="azure">Azure</option>
+                                <option value="gcp">Google Cloud</option>
+                                <option value="terraform">Terraform</option>
+                                <option value="jenkins">Jenkins</option>
+                                <option value="git">Git</option>
+                                <option value="graphql">GraphQL</option>
+                                <option value="redis">Redis</option>
+                                <option value="kafka">Kafka</option>
+                                <option value="elasticsearch">Elasticsearch</option>
+                                <option value="typescript">TypeScript</option>
+                                <option value="flutter">Flutter</option>
+                                <option value="swift">Swift</option>
+                                <option value="kotlin">Kotlin</option>
+                            </select>
                         </div>
                         <div>
                             <label htmlFor="message" className="block text-sm font-medium text-gray-300">
