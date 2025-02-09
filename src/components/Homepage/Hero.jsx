@@ -7,12 +7,14 @@ const Hero = () => {
                 <div className="flex h-full max-sm:flex-col">
                     <div className="flex-1 max-sm:order-2">
                         <div className="flex flex-col justify-center h-full gap-4 sm:gap-8">
-                            <h1 className="text-3xl sm:text-5xl font-bold flex flex-col gap-1 sm:gap-4 m-0">
-                                Build your next app with{" "}
-                                <span className="text-white max-sm:text-2xl uppercase ">
-                                    Codesefod
-                                </span>
-                            </h1>
+                        <h1 className="text-3xl sm:text-5xl font-bold flex flex-col gap-1 sm:gap-4 m-0">
+    Transform your ideas into reality with{" "}
+    <span className="text-white max-sm:text-2xl uppercase">
+        Codesefod
+    </span>
+</h1>
+
+
                             <p className="sm:text-lg sm:mt-5">
                                 Our mission is to deliver
                                 innovative and scalable
