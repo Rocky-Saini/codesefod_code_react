@@ -1,6 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        mobileNumber: "",
+        service: "",
+        technologies: [],
+        message: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleMultiSelectChange = (e) => {
+        const selectedOptions = Array.from(e.target.selectedOptions).map(opt => opt.value);
+        setFormData((prev) => ({
+            ...prev,
+            technologies: selectedOptions,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch("https://codesefod-application-latest.onrender.com/api/contact/send", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                alert("Message sent successfully!");
+                setFormData({
+                    name: "",
+                    email: "",
+                    mobileNumber: "",
+                    service: "",
+                    technologies: [],
+                    message: "",
+                });
+            } else {
+                alert("Failed to send message. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("Something went wrong!");
+        }
+    };
+
     return (
         <div className="min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
@@ -11,7 +67,7 @@ const Contact = () => {
                     <p className="mt-4 text-lg text-gray-300 text-center">
                         We'd love to hear from you! Please fill out the form below and we'll get back to you as soon as possible.
                     </p>
-                    <form className="mt-8 space-y-6">
+                    <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                                 Name
@@ -20,21 +76,25 @@ const Contact = () => {
                                 id="name"
                                 name="name"
                                 type="text"
+                                value={formData.name}
+                                onChange={handleChange}
                                 required
-                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
                                 placeholder="Your Name"
                             />
                         </div>
                         <div>
-                            <label htmlFor="mobile" className="block text-sm font-medium text-gray-300">
+                            <label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-300">
                                 Mobile Number
                             </label>
                             <input
-                                id="mobile"
-                                name="mobile"
+                                id="mobileNumber"
+                                name="mobileNumber"
                                 type="tel"
+                                value={formData.mobileNumber}
+                                onChange={handleChange}
                                 required
-                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
                                 placeholder="Your Mobile Number"
                             />
                         </div>
@@ -46,8 +106,10 @@ const Contact = () => {
                                 id="email"
                                 name="email"
                                 type="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 required
-                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
                                 placeholder="Your Email"
                             />
                         </div>
@@ -58,10 +120,12 @@ const Contact = () => {
                             <select
                                 id="service"
                                 name="service"
+                                value={formData.service}
+                                onChange={handleChange}
                                 required
-                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
                             >
-                                <option value="" disabled selected>Select a service</option>
+                                <option value="" disabled>Select a service</option>
                                 <option value="web-development">Web Development</option>
                                 <option value="mobile-app-development">Mobile App Development</option>
                                 <option value="ui-ux-design">UI/UX Design</option>
@@ -82,8 +146,10 @@ const Contact = () => {
                                 id="technologies"
                                 name="technologies"
                                 multiple
+                                value={formData.technologies}
+                                onChange={handleMultiSelectChange}
                                 required
-                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
                             >
                                 <option value="java">Java</option>
                                 <option value="spring-boot">Spring Boot</option>
@@ -121,15 +187,17 @@ const Contact = () => {
                                 id="message"
                                 name="message"
                                 rows="4"
+                                value={formData.message}
+                                onChange={handleChange}
                                 required
-                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                                className="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
                                 placeholder="Your Message"
                             ></textarea>
                         </div>
                         <div>
                             <button
                                 type="submit"
-                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300"
+                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 transition duration-300"
                             >
                                 Send Message
                             </button>
