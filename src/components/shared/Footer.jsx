@@ -9,16 +9,24 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router";
 
+import footerImg from "../../../public/footerLogo.png";
+
 const Footer = () => {
     return (
-        <footer className=" text-gray-300 py-8">
+        <footer id="footer" className=" text-gray-300 py-8">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="grid sm:grid-cols-3 gap-8 sm:gap-36 lg:gap-48">
                     {/* Logo and About */}
-                    <div className="mb-6 md:mb-0">
-                        <h2 className="footer-logo">
+                    <div className="mb-6 md:mb-0 flex flex-col gap-4">
+                        <figure className="w-30">
+                            <img
+                                className="h-full w-full object-contain object-left"
+                                src={footerImg}
+                            />
+                        </figure>
+                        {/* <h2 className="footer-logo">
                             CodeSeFod
-                        </h2>
+                        </h2> */}
                         <p className="text-sm mt-2 max-w-xs">
                             A premier software agency in
                             Noida, delivering cutting-edge
@@ -37,6 +45,7 @@ const Footer = () => {
                                     <Link
                                         to={val.url}
                                         className="nav-link"
+                                        target="_blank"
                                     >
                                         {val.title}
                                     </Link>
@@ -54,24 +63,28 @@ const Footer = () => {
                             <a
                                 href="https://www.linkedin.com/company/codesefod/?viewAsMember=true"
                                 className="text-gray-400 hover:text-blue-400 text-xl"
+                                target="_blank"
                             >
                                 <FaLinkedinIn />
                             </a>
                             <a
                                 href="https://www.facebook.com/codesefod/"
                                 className="text-gray-400 hover:text-blue-400 text-xl"
+                                target="_blank"
                             >
                                 <FaFacebookF />
                             </a>
                             <a
                                 href="https://x.com/codesefod"
                                 className="text-gray-400 hover:text-blue-400 text-xl"
+                                target="_blank"
                             >
                                 <FaTwitter />
                             </a>
                             <a
                                 href="https://www.instagram.com/codesefod/"
                                 className="text-gray-400 hover:text-blue-400 text-xl"
+                                target="_blank"
                             >
                                 <FaInstagram />
                             </a>

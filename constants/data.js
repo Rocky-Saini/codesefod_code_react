@@ -45,6 +45,34 @@ export const clientsArr = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
+    {
+        id: 5,
+        image: "/tcl.svg",
+        name: "TCL",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    {
+        id: 6,
+        image: "/revlon.svg",
+        name: "Revlon",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    {
+        id: 7,
+        image: "/whirlpool.svg",
+        name: "Whirlpool",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    {
+        id: 8,
+        image: "/bose.svg",
+        name: "Bose",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
 ];
 
 export const deliveryArr = [
