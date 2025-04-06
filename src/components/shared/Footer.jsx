@@ -5,6 +5,7 @@ import {
     FaTwitter,
     FaLinkedinIn,
     FaGithub,
+    FaInstagram,
 } from "react-icons/fa";
 import { Link } from "react-router";
 
@@ -51,28 +52,28 @@ const Footer = () => {
                         </h3>
                         <div className="flex space-x-4 mt-2">
                             <a
-                                href="#"
-                                className="text-gray-400 hover:text-blue-400 text-xl"
-                            >
-                                <FaFacebookF />
-                            </a>
-                            <a
-                                href="#"
-                                className="text-gray-400 hover:text-blue-400 text-xl"
-                            >
-                                <FaTwitter />
-                            </a>
-                            <a
-                                href="#"
+                                href="https://www.linkedin.com/company/codesefod/?viewAsMember=true"
                                 className="text-gray-400 hover:text-blue-400 text-xl"
                             >
                                 <FaLinkedinIn />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.facebook.com/codesefod/"
                                 className="text-gray-400 hover:text-blue-400 text-xl"
                             >
-                                <FaGithub />
+                                <FaFacebookF />
+                            </a>
+                            <a
+                                href="https://x.com/codesefod"
+                                className="text-gray-400 hover:text-blue-400 text-xl"
+                            >
+                                <FaTwitter />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/codesefod/"
+                                className="text-gray-400 hover:text-blue-400 text-xl"
+                            >
+                                <FaInstagram />
                             </a>
                         </div>
                     </div>

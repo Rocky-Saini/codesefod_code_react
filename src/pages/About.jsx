@@ -2,7 +2,8 @@ import React from "react";
 
 const About = () => {
     return (
-        <div className="min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8">
+        <div className="rounded-lg shadow-2xl p-6 sm:p-10">
+
             {/* Hero Section */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
