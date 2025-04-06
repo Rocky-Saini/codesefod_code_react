@@ -170,6 +170,7 @@ const Header = () => {
                             );
                         })}
                     </nav>
+                    
                 </div>
 
                 {/* QR Code */}
